@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveler - Ваш Туристичний Партнер</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Traveler</div>
+            <ul class="nav-links">
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#news">Новини</a></li>
+                <li><a href="#services">Послуги</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Ласкаво просимо до Traveler</h1>
+            <p>Ваш ідеальний туристичний партнер.</p>
+            <div class="tour-search">
+                <h2>Знайти Тур</h2>
+                <form id="tourSearchForm">
+                    <label for="destinationCountry">Країна відпочинку:</label>
+                    <select id="destinationCountry" name="destinationCountry" required>
+                        <option value="">Виберіть країну</option>
+                        <option value="Туреччина">Туреччина</option>
+                        <option value="Єгипет">Єгипет</option>
+                        <option value="Греція">Греція</option>
+                        <option value="Іспанія">Іспанія</option>
+                    </select>
+
+                    <label for="resort">Курорт:</label>
+                    <select id="resort" name="resort" required>
+                        <option value="">Виберіть курорт</option>
+                    </select>
+
+                    <label for="startDate">Дата початку:</label>
+                    <input type="date" id="startDate" name="startDate" required>
+
+                    <label for="endDate">Дата закінчення:</label>
+                    <input type="date" id="endDate" name="endDate" required>
+
+                    <label for="duration">Тривалість (днів):</label>
+                    <input type="number" id="duration" name="duration" min="1" max="30" required>
+
+                    <label for="adults">Кількість дорослих:</label>
+                    <input type="number" id="adults" name="adults" min="1" max="3" required>
+
+                    <label for="children">Кількість дітей:</label>
+                    <input type="number" id="children" name="children" min="0" max="3">
+
+                    <label for="departureCountry">Країна виїзду:</label>
+                    <select id="departureCountry" name="departureCountry" required>
+                        <option value="">Виберіть країну</option>
+                        <option value="Україна">Україна</option>
+                        <option value="Польща">Польща</option>
+                        <option value="Німеччина">Німеччина</option>
+                    </select>
+
+                    <button type="submit">Знайти тур</button>
+                </form>
+            </div>
+        </section>
+        <section id="news">
+            <h2>Останні новини</h2>
+            <div class="news-container">
+                <!-- Новини будуть додані за допомогою JavaScript -->
+            </div>
+        </section>
+        <section id="services">
+            <h2>Наші послуги</h2>
+            <p>Досліджуйте наш широкий спектр туристичних послуг.</p>
+        </section>
+        <section id="gallery">
+            <h2>Фотогалерея</h2>
+            <div class="gallery-container">
+                <!-- Фотографії будуть додані за допомогою JavaScript -->
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Контакти</h2>
+            <form id="contactForm">
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Повідомлення:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Відправити</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Traveler. Всі права захищені.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
