@@ -1,3 +1,6 @@
+const BASE_URL = "http://192.168.0.101:8080";
+const COUNTRIES_URL = `${BASE_URL}/countries`;
+// const CITIES_URL = `${BASE_URL}/cities`;
 document.addEventListener('DOMContentLoaded', function () {
     // Приклад даних новин
     const newsData = [
