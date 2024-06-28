@@ -15,14 +15,10 @@ async function fetchCountries() {
         
         const countries = await response.json();
         
-        countries.forEach(country => {
-            const option = document.createElement('option');
-            option.value = country;
-            option.textContent = country;
-            selectElement.appendChild(option);
-        });
+        selectElement.innerHTML = '<option disabled selected>Select Country</option>' + countries.map(country => `<option value="${country}">${country}</option>`).join('');
     } catch (error) {
         console.error('Error fetching countries:', error);
+        alert('Error fetching countries: ' + error.message);
     }
 }
 
@@ -39,40 +35,43 @@ async function fetchResorts() {
         
         const resorts = await response.json();
         
-        resorts.forEach(resort => {
-            const option = document.createElement('option');
-            option.value = resort;
-            option.textContent = resort;
-            resortSelect.appendChild(option);
-        });
+        resortSelect.innerHTML = '<option disabled selected>Select Resort</option>' + resorts.map(resort => `<option value="${resort}">${resort}</option>`).join('');
     } catch (error) {
         console.error('Error fetching resorts:', error);
+        alert('Error fetching resorts: ' + error.message);
     }
 }
 
-async function fetchDepartureCities() {
+async function fetchDepartureCities() {    
+    const countrySelect = document.getElementById('countrySelect');
+    const resortSelect = document.getElementById('resortSelect');
     const selectElement = document.getElementById('departureCitySelect');
+    const selectedCountry = countrySelect.value;
+    const selectedResort = resortSelect.value;
 
     try {
-        const response = await fetch(apiDepartureCitiesURL);
+        const response = await fetch(`${apiDepartureCitiesURL}?countryName=${selectedCountry}&resortName=${selectedResort}`);
         if (!response.ok) {
             throw new Error('Failed to fetch departure cities');
         }
         
         const departureCities = await response.json();
         
-        departureCities.forEach(city => {
-            const option = document.createElement('option');
-            option.value = city;
-            option.textContent = city;
-            selectElement.appendChild(option);
-        });
+        selectElement.innerHTML = '<option disabled selected>Select Departure City</option>' + departureCities.map(city => {
+            let travelModes = '';
+            if (city.travelMode) {
+                Object.keys(city.travelMode).forEach(mode => {
+                    travelModes += ` (${mode})`;
+                });
+            }
+            return `<option value="${city.name}">${city.name}${travelModes}</option>`;
+        }).join('');
     } catch (error) {
         console.error('Error fetching departure cities:', error);
+        alert('Error fetching departure cities: ' + error.message);
     }
 }
 
 window.onload = function() {
     fetchCountries();
-    fetchDepartureCities();
 };
