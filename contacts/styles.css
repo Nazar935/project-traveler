@@ -1,0 +1,132 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #d9e4f5, #f0f4fa);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+h1 {
+    color: #0044cc; /* Блакитний колір */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    color: #0044cc; /* Блакитний колір */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #333333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    background: #f7f9fc;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease;
+}
+
+.contact-method:hover {
+    background: #e3e8f0;
+}
+
+.contact-method img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.75rem;
+}
+
+.contact-method span {
+    font-size: 1.2rem;
+    color: #0044cc; /* Блакитний колір */
+}
+
+.working-hours {
+    margin-bottom: 2rem;
+}
+
+.callback-form {
+    text-align: left;
+    background: #f7f9fc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.callback-form h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.callback-form input[type="tel"] {
+    width: calc(100% - 1rem);
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.privacy-policy {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.privacy-policy input {
+    margin-right: 0.5rem;
+}
+
+.privacy-policy label {
+    color: #333333;
+    font-size: 0.9rem;
+}
+
+button[type="submit"] {
+    background-color: #ffd700; /* Жовтий колір */
+    color: #0044cc; /* Блакитний колір */
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+button[type="submit"]:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
