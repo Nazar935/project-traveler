@@ -9,7 +9,6 @@
 <body>
     <div class="container">
         <h1>Контакти</h1>
-        <div class="contact-methods">
             <div class="contact-method">
                 <img src="telegram-icon.png" alt="Telegram">
                 <span>+38 044 338 41 44</span>
@@ -33,15 +32,18 @@
         </div>
         <div class="callback-form">
             <h2>Замовити дзвінок</h2>
-            <div class="phone-input">
-                <span>+380</span>
-                <input type="tel" id="phone" placeholder="Ваш номер" required maxlength="9">
-            </div>
-            <div class="privacy-policy">
-                <input type="checkbox" id="privacy-policy" required>
-                <label for="privacy-policy">Погоджуюсь з умовами використання сайту та політикою конфіденційності</label>
-            </div>
-            <button type="submit">Надіслати</button>
+            <form id="callbackForm">
+                <div class="phone-input">
+                    <span>+380</span>
+                    <input type="tel" id="phone" placeholder="Ваш номер" required maxlength="9">
+                </div>
+                <div class="privacy-policy">
+                    <input type="checkbox" id="privacy-policy" required>
+                    <label for="privacy-policy">Погоджуюсь з умовами використання сайту та політикою конфіденційності</label>
+                </div>
+                <button type="submit">Надіслати</button>
+            </form>
+            <p id="message"></p>
         </div>
     </div>
     <script src="script.js"></script>

@@ -14,6 +14,9 @@ body {
     max-width: 800px;
     margin: 2rem auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує контент горизонтально */
 }
 
 h1 {
@@ -35,16 +38,10 @@ p {
     margin-bottom: 1.5rem;
 }
 
-.contact-methods {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
 .contact-method {
     display: flex;
     align-items: center;
+    justify-content: center;
     background: #f7f9fc;
     padding: 0.75rem 1rem;
     border-radius: 5px;
@@ -53,25 +50,26 @@ p {
     max-width: 400px;
     margin-bottom: 1rem;
     transition: background 0.3s ease;
-}
-
-.contact-method:hover {
-    background: #e3e8f0;
+    text-align: center;
 }
 
 .contact-method img {
     width: 30px;
     height: 30px;
     margin-right: 0.75rem;
+    display: inline-block; /* змінено з block на inline-block */
 }
 
 .contact-method span {
     font-size: 1.2rem;
     color: #0044cc; /* Блакитний колір */
+    display: inline-block; /* змінено з block на inline-block */
+    vertical-align: middle; /* додаємо для вертикального вирівнювання */
 }
 
 .working-hours {
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .callback-form {
@@ -80,6 +78,8 @@ p {
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
 .callback-form h2 {
@@ -142,4 +142,10 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #e6b800;
     transform: scale(1.05);
+}
+
+#message {
+    font-size: 1rem;
+    color: #0044cc; /* Блакитний колір */
+    margin-top: 1rem;
 }
