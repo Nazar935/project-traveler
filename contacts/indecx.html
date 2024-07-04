@@ -33,7 +33,10 @@
         </div>
         <div class="callback-form">
             <h2>Замовити дзвінок</h2>
-            <input type="tel" placeholder="Телефон" required>
+            <div class="phone-input">
+                <span>+380</span>
+                <input type="tel" id="phone" placeholder="Ваш номер" required maxlength="9">
+            </div>
             <div class="privacy-policy">
                 <input type="checkbox" id="privacy-policy" required>
                 <label for="privacy-policy">Погоджуюсь з умовами використання сайту та політикою конфіденційності</label>
@@ -41,5 +44,6 @@
             <button type="submit">Надіслати</button>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -87,13 +87,26 @@ p {
     font-size: 1.8rem;
 }
 
-.callback-form input[type="tel"] {
-    width: calc(100% - 1rem);
-    padding: 0.75rem;
-    margin-top: 0.5rem;
+.phone-input {
+    display: flex;
+    align-items: center;
     margin-bottom: 1rem;
+}
+
+.phone-input span {
+    background-color: #e0e7ff;
+    padding: 0.75rem;
     border: 1px solid #cccccc;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+    color: #0044cc; /* Блакитний колір */
+}
+
+.phone-input input {
+    width: calc(100% - 4rem);
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 0 5px 5px 0;
     font-size: 1rem;
 }
 
