@@ -10,13 +10,14 @@ body {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
     max-width: 800px;
     margin: 2rem auto;
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрує контент горизонтально */
+    align-items: center;
+    justify-content: center; /* Центрування контейнера по вертикалі */
+    min-height: 100vh; /* Мінімальна висота контейнера на весь екран */
 }
 
 h1 {
@@ -78,8 +79,10 @@ p {
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    max-width: 600px; /* Збільшуємо максимальну ширину форми */
+    margin-top: 2rem; /* Додали відступ зверху для візуального розділення */
+    margin-bottom: 2rem; /* Додали відступ знизу для візуального розділення */
+    margin: 0 auto; /* Центруємо форму по горизонталі */
 }
 
 .callback-form h2 {
