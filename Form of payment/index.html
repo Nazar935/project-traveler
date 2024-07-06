@@ -7,41 +7,44 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="payment-form">
-        <h2>Оплата туру</h2>
-        <form id="paymentForm">
-            <div class="form-group">
-                <label for="cardNumber">Номер карти</label>
-                <input type="text" id="cardNumber" maxlength="16" required>
-                <div class="error" id="cardNumberError"></div>
-            </div>
-            <div class="form-group">
-                <label for="expiryDate">Термін дії карти (MM/YY)</label>
-                <input type="text" id="expiryDate" maxlength="5" required>
-                <div class="error" id="expiryDateError"></div>
-            </div>
-            <div class="form-group cvv-container">
-                <label for="cvv">CVV2 код</label>
-                <input type="password" id="cvv" maxlength="3" required>
-                <button type="button" class="show-cvv-button" id="showCvvButton">👁️</button>
-                <div class="error" id="cvvError"></div>
-            </div>
-            <div class="form-group">
-                <label for="cardHolder">Прізвище та Ім'я</label>
-                <input type="text" id="cardHolder" pattern="[A-Za-z\s]+" required>
-                <div class="hint">Вводьте тільки латинські літери. Прізвище та ім'я повинні починатися з великої літери.</div>
-                <div class="error" id="cardHolderError"></div>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required>
-                <div class="error" id="emailError"></div>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Сплатити">
-            </div>
-        </form>
-    </div>
-    <script src="script.js"></script>
+
+<div class="payment-form">
+    <h2>Оплата туру</h2>
+    <form id="paymentForm">
+        <div class="form-group">
+            <label for="cardNumber">Номер карти</label>
+            <input type="text" id="cardNumber" maxlength="16" required>
+            <div class="error" id="cardNumberError"></div>
+        </div>
+        <div class="form-group">
+            <label for="expiryDate">Термін дії карти (MM/YY)</label>
+            <input type="text" id="expiryDate" maxlength="5" required>
+            <div class="error" id="expiryDateError"></div>
+        </div>
+        <div class="form-group cvv-container">
+            <label for="cvv">CVV2 код</label>
+            <input type="password" id="cvv" maxlength="3" required>
+            <button type="button" class="show-cvv-button" id="showCvvButton">👁️</button>
+            <div class="error" id="cvvError"></div>
+        </div>
+        <div class="form-group">
+            <label for="cardHolder">Прізвище та Ім'я</label>
+            <input type="text" id="cardHolder" pattern="[A-Za-z\s]+" required>
+            <div class="hint">Вводьте тільки латинські літери. Прізвище та ім'я повинні починатися з великої літери.</div>
+            <div class="error" id="cardHolderError"></div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+            <div class="error" id="emailError"></div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Сплатити">
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>

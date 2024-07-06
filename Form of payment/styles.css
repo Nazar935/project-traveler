@@ -8,17 +8,18 @@ body {
 }
 
 .payment-form {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 350px;
 }
 
 .payment-form h2 {
     margin-bottom: 20px;
     font-size: 24px;
     text-align: center;
+    color: #0044cc; /* Блакитний колір */
 }
 
 .form-group {
@@ -28,32 +29,39 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
+    color: #0044cc; /* Блакитний колір */
 }
 
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"] {
-    border: 1px solid #ccc;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #cccccc;
     border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: #0044cc; /* Блакитний колір */
+    outline: none;
 }
 
 .form-group input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #ffd700; /* Жовтий колір */
+    color: #0044cc; /* Блакитний колір */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    padding: 10px;
+    width: 100%;
 }
 
 .form-group input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #e6b800;
 }
 
 .error {
@@ -79,4 +87,11 @@ body {
 .hint {
     font-size: 12px;
     color: #888;
+}
+
+.hint,
+.form-group label,
+.form-group input {
+    margin-left: 10px;
+    margin-right: 10px;
 }

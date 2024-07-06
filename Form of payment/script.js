@@ -1,6 +1,6 @@
 document.getElementById('paymentForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    
+
     const cardNumber = document.getElementById('cardNumber').value;
     const expiryDate = document.getElementById('expiryDate').value;
     const cvv = document.getElementById('cvv').value;
@@ -16,7 +16,7 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
     const cardNumberPattern = /^\d{16}$/;
     const expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
     const cvvPattern = /^\d{3}$/;
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     const cardHolderPattern = /^[A-Z][a-z]*\s[A-Z][a-z]*$/;
 
     let isValid = true;
@@ -99,6 +99,13 @@ document.getElementById('expiryDate').addEventListener('keydown', function(event
 });
 
 document.getElementById('cardNumber').addEventListener('keypress', function(event) {
+    const allowedKeys = '0123456789';
+    if (!allowedKeys.includes(event.key)) {
+        event.preventDefault();
+    }
+});
+
+document.getElementById('cvv').addEventListener('keypress', function(event) {
     const allowedKeys = '0123456789';
     if (!allowedKeys.includes(event.key)) {
         event.preventDefault();
