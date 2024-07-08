@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма для підбору тура</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Заявка на підбір туру</h2>
+    <form id="tourForm">
+        <input type="text" name="name" placeholder="Ім'я" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <textarea name="comment" placeholder="Коментар: країна(и), бюджет, к-сть туристів, будь-які побажання..." rows="4" required></textarea>
+        <div class="checkbox-container">
+            <input type="checkbox" name="agree" id="agree" required>
+            <label for="agree">погоджуюсь з умовами використання сайту та політикою конфіденційності</label>
+        </div>
+        <button type="submit">Надіслати</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
