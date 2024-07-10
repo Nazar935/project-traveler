@@ -1,25 +1,3 @@
-const apiBaseURL = "http://127.0.0.1:8080";
-const apiToursURL = `${apiBaseURL}/tours`;
-const apiToursCountryNamesURL = `${apiToursURL}/countryNames`;
-const apiToursResortNamesURL = `${apiToursURL}/resortNames`;
-const apiDepartureCitiesURL = `${apiToursURL}/departureCities`;
-
-async function fetchCountries() {
-    try {
-        const response = await fetch(apiToursCountryNamesURL);
-        if (!response.ok) {
-            throw new Error('Failed to fetch countries');
-        }
-        
-        const countries = await response.json();
-        return countries;
-    } catch (error) {
-        console.error('Error fetching countries:', error);
-        alert('Error fetching countries: ' + error.message);
-        return [];
-    }
-}
-
 async function fetchResorts(selectedCountry) {
     try {
         const response = await fetch(`${apiToursResortNamesURL}?countryName=${selectedCountry}`);
@@ -100,8 +78,3 @@ async function resortSelectOnChange() {
 async function departureCitySelectOnChange() {
 
 }
-
-window.onload = async function() {
-    const countries = await fetchCountries();
-    updateCountrySelect(countries);
-};
