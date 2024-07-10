@@ -9,27 +9,21 @@
     <h1>Search</h1>
     <form>
         <label for="country">Country</label>
-        <select id="countrySelect" onchange="(function() { fetchResorts(); fetchDepartureCities(); })()">
+        <select id="countrySelect" onchange="contrySelectOnChange()">
              <option disabled selected>Select Country</option>
         </select>
 
         <label for="resort">Resort</label>
-        <select id="resortSelect" onchange="fetchDepartureCities()">
+        <select id="resortSelect" onchange="resortSelectOnChange()">
             <option disabled selected>Select Resort</option>
         </select>
         
         <label for="departureCity">Departure City</label>
-        <select id="departureCitySelect">
+        <select id="departureCitySelect" onchange="departureCitySelectOnChange()">
              <option disabled selected>Select Departure City</option>
         </select>
     </form>
 
-    <script src="script.js">
-          function handleMultipleChanges() {
-            console.log("Handling multiple onchange events.");
-            handleChange1();
-            handleChange2();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

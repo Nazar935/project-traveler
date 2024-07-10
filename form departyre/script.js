@@ -1,12 +1,10 @@
-const apiBaseURL = "http://192.168.101:8080";
+const apiBaseURL = "http://127.0.0.1:8080";
 const apiToursURL = `${apiBaseURL}/tours`;
 const apiToursCountryNamesURL = `${apiToursURL}/countryNames`;
 const apiToursResortNamesURL = `${apiToursURL}/resortNames`;
 const apiDepartureCitiesURL = `${apiToursURL}/departureCities`;
 
 async function fetchCountries() {
-    const selectElement = document.getElementById('countrySelect');
-
     try {
         const response = await fetch(apiToursCountryNamesURL);
         if (!response.ok) {
@@ -14,19 +12,15 @@ async function fetchCountries() {
         }
         
         const countries = await response.json();
-        
-        selectElement.innerHTML = '<option disabled selected>Select Country</option>' + countries.map(country => `<option value="${country}">${country}</option>`).join('');
+        return countries;
     } catch (error) {
         console.error('Error fetching countries:', error);
         alert('Error fetching countries: ' + error.message);
+        return [];
     }
 }
 
-async function fetchResorts() {
-    const countrySelect = document.getElementById('countrySelect');
-    const resortSelect = document.getElementById('resortSelect');
-    const selectedCountry = countrySelect.value;
-
+async function fetchResorts(selectedCountry) {
     try {
         const response = await fetch(`${apiToursResortNamesURL}?countryName=${selectedCountry}`);
         if (!response.ok) {
@@ -34,11 +28,11 @@ async function fetchResorts() {
         }
         
         const resorts = await response.json();
-        
-        resortSelect.innerHTML = '<option disabled selected>Select Resort</option>' + resorts.map(resort => `<option value="${resort}">${resort}</option>`).join('');
+        return resorts;
     } catch (error) {
         console.error('Error fetching resorts:', error);
         alert('Error fetching resorts: ' + error.message);
+        return [];
     }
 }
 
@@ -72,6 +66,42 @@ async function fetchDepartureCities() {
     }
 }
 
-window.onload = function() {
-    fetchCountries();
+function defaultSelectCountryOptionString() {
+    return '<option disabled selected>Select Country</option>';
+}
+
+function defaultReportOptoinSelect() {
+    return '<option disabled selected>Select Resort</option>'
+}
+
+function countryOptionsString(countries) {
+    return countries.map(country => `<option value="${country}">${country}</option>`).join('');
+}
+
+function updateCountrySelect(countries) {
+    const selectElement = document.getElementById('countrySelect');
+    selectElement.innerHTML = defaultSelectCountryOptionString() + countryOptionsString(countries);
+}
+
+function updateResortSelect(resorts) {
+    const resortSelect = document.getElementById('resortSelect');
+    resortSelect.innerHTML = defaultReportOptoinSelect() + resorts.map(resort => `<option value="${resort}">${resort}</option>`).join('');
+}
+
+async function contrySelectOnChange() {
+    const resorts = await fetchResorts();
+    updateCountrySelect(resorts);
+}
+
+async function resortSelectOnChange() {
+    await fetchDepartureCities();
+}
+
+async function departureCitySelectOnChange() {
+
+}
+
+window.onload = async function() {
+    const countries = await fetchCountries();
+    updateCountrySelect(countries);
 };
