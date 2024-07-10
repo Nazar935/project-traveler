@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-top: 10px solid #1E90FF; /* Блакитний */
+}
+.faq-container h1 {
+    text-align: center;
+    color: #1E90FF; /* Блакитний */
+}
+.faq-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #1E90FF; /* Блакитний */
+}
+.faq-question:hover {
+    color: #FFD700; /* Жовтий */
+}
+.faq-answer {
+    display: none;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+.faq-question::after {
+    content: '+';
+    font-size: 20px;
+    color: #FFD700; /* Жовтий */
+}
+.faq-question.active::after {
+    content: '-';
+    color: #FFD700; /* Жовтий */
+}
