@@ -1,8 +1,17 @@
-const apiBaseURL = "http://127.0.0.1:8080";
+const apiBaseURL = "https://evident-pug-abnormally.ngrok-free.app";
+const apiBaseLocalhostURL = "http://127.0.0.1:8080";
+
 const apiToursURL = `${apiBaseURL}/tours`;
+const apiToursLocalhostURL = `${apiBaseLocalhostURL}/tours`;
+
 const apiToursCountryNamesURL = `${apiToursURL}/countryNames`;
+const apiToursCountryNamesLocalhostURL = `${apiToursLocalhostURL}/countryNames`;
+
 const apiToursResortNamesURL = `${apiToursURL}/resortNames`;
+const apiToursResortNamesLocalhostURL = `${apiToursLocalhostURL}/resortNames`;
+
 const apiDepartureCitiesURL = `${apiToursURL}/departureCities`;
+const apiDepartureCitiesLocalhostURL = `${apiToursLocalhostURL}/departureCities`;
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeCountrySelect();
@@ -11,6 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadCountryOptions();
 });
+
+function onCountryChange() {
+    initializeResortSelect();
+    initializeDepartureCitySelect();
+    loadResortOptions();
+}
+
+function onResortChange() {
+    initializeDepartureCitySelect();
+    loadDepartureCities();
+}
+
 
 function initializeCountrySelect() {
     const countrySelect = document.getElementById('countrySelect');
@@ -78,9 +99,9 @@ async function loadDepartureCities() {
     });
 }
 
-async function fetchCountries() {
+async function fetchCountries(url = apiToursCountryNamesURL) {
     try {
-        const response = await fetch(apiToursCountryNamesURL);
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Failed to fetch countries');
         }
@@ -88,18 +109,23 @@ async function fetchCountries() {
         const countries = await response.json();
         return countries;
     } catch (error) {
-        console.error('Error fetching countries:', error);
-        alert('Error fetching countries: ' + error.message);
-        return [];
+        console.error(`Error fetching countries from ${url}:`, error);
+        if (url === apiToursCountryNamesURL) {
+            console.log('Retrying with fallback URL...');
+            return fetchCountries(apiToursCountryNamesLocalhostURL);
+        } else {
+            alert('Error fetching countries: ' + error.message);
+            return [];
+        }
     }
 }
 
-async function fetchResorts() {
+async function fetchResorts(url = apiToursResortNamesURL) {
     const countrySelect = document.getElementById('countrySelect');
     const selectedCountry = countrySelect.value;
 
     try {
-        const response = await fetch(`${apiToursResortNamesURL}?countryName=${selectedCountry}`);
+        const response = await fetch(`${url}?countryName=${selectedCountry}`);
         if (!response.ok) {
             throw new Error('Failed to fetch resorts');
         }
@@ -107,20 +133,25 @@ async function fetchResorts() {
         const resorts = await response.json();
         return resorts;
     } catch (error) {
-        console.error('Error fetching resorts:', error);
-        alert('Error fetching resorts: ' + error.message);
-        return [];
+        console.error(`Error fetching resorts from ${url}:`, error);
+        if (url === apiToursResortNamesURL) {
+            console.log('Retrying with fallback URL...');
+            return fetchResorts(apiToursResortNamesLocalhostURL);
+        } else {
+            alert('Error fetching resorts: ' + error.message);
+            return [];
+        }
     }
 }
 
-async function fetchDepartureCities() {
+async function fetchDepartureCities(url = apiDepartureCitiesURL) {
     const countrySelect = document.getElementById('countrySelect');
     const resortSelect = document.getElementById('resortSelect');
     const selectedCountry = countrySelect.value;
     const selectedResort = resortSelect.value;
 
     try {
-        const response = await fetch(`${apiDepartureCitiesURL}?countryName=${selectedCountry}&resortName=${selectedResort}`);
+        const response = await fetch(`${url}?countryName=${selectedCountry}&resortName=${selectedResort}`);
         if (!response.ok) {
             throw new Error('Failed to fetch departure cities');
         }
@@ -128,19 +159,13 @@ async function fetchDepartureCities() {
         const departureCities = await response.json();
         return departureCities;
     } catch (error) {
-        console.error('Error fetching departure cities:', error);
-        alert('Error fetching departure cities: ' + error.message);
-        return [];
+        console.error(`Error fetching departure cities from ${url}:`, error);
+        if (url === apiDepartureCitiesURL) {
+            console.log('Retrying with fallback URL...');
+            return fetchDepartureCities(apiDepartureCitiesLocalhostURL);
+        } else {
+            alert('Error fetching departure cities: ' + error.message);
+            return [];
+        }
     }
-}
-
-function onCountryChange() {
-    initializeResortSelect();
-    initializeDepartureCitySelect();
-    loadResortOptions();
-}
-
-function onResortChange() {
-    initializeDepartureCitySelect();
-    loadDepartureCities();
 }
