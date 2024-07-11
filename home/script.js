@@ -19,6 +19,37 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeDepartureCitySelect();
 
     loadCountryOptions();
+
+    const adultsValue = document.getElementById('adults-value');
+    const childrenValue = document.getElementById('children-value');
+
+    document.getElementById('adults-decrement').addEventListener('click', () => {
+        let value = parseInt(adultsValue.textContent);
+        if (value > 1) {
+            adultsValue.textContent = value - 1;
+        }
+    });
+
+    document.getElementById('adults-increment').addEventListener('click', () => {
+        let value = parseInt(adultsValue.textContent);
+        if (value < 9) {
+            adultsValue.textContent = value + 1;
+        }
+    });
+
+    document.getElementById('children-decrement').addEventListener('click', () => {
+        let value = parseInt(childrenValue.textContent);
+        if (value > 0) {
+            childrenValue.textContent = value - 1;
+        }
+    });
+
+    document.getElementById('children-increment').addEventListener('click', () => {
+        let value = parseInt(childrenValue.textContent);
+        if (value < 4) {
+            childrenValue.textContent = value + 1;
+        }
+    });
 });
 
 function onCountryChange() {

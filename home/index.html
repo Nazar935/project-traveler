@@ -15,57 +15,21 @@
         
         <label for="departureCity">Departure City</label>
         <select id="departureCitySelect" onchange="onDepartureCityChange()"></select>
+    </form>
 
         <div class="counter-container">
             <span>Дорослі</span>
-            <button id="adults-decrement">-</button>
-            <span id="adults-value">1</span>
-            <button id="adults-increment">+</button>
+            <button id="adults-decrement" class="counter-btn">-</button>
+            <span id="adults-value" class="counter-value">1</span>
+            <button id="adults-increment" class="counter-btn">+</button>
         </div>
-
         <div class="counter-container">
             <span>Діти</span>
-            <button id="children-decrement">-</button>
-            <span id="children-value">0</span>
-            <button id="children-increment">+</button>
+            <button id="children-decrement" class="counter-btn">-</button>
+            <span id="children-value" class="counter-value">0</span>
+            <button id="children-increment" class="counter-btn">+</button>
         </div>
-    </form>
-
-    <script src="script.js">
-        function setupCounter(valueId, incrementBtnId, decrementBtnId, minValue, maxValue) {
-            const valueElement = document.getElementById(valueId);
-            const incrementButton = document.getElementById(incrementBtnId);
-            const decrementButton = document.getElementById(decrementBtnId);
-
-            incrementButton.addEventListener('click', () => {
-                let currentValue = parseInt(valueElement.textContent);
-                if (currentValue < maxValue) {
-                    valueElement.textContent = currentValue + 1;
-                    decrementButton.disabled = false;
-                }
-                if (currentValue + 1 === maxValue) {
-                    incrementButton.disabled = true;
-                }
-            });
-
-            decrementButton.addEventListener('click', () => {
-                let currentValue = parseInt(valueElement.textContent);
-                if (currentValue > minValue) {
-                    valueElement.textContent = currentValue - 1;
-                    incrementButton.disabled = false;
-                }
-                if (currentValue - 1 === minValue) {
-                    decrementButton.disabled = true;
-                }
-            });
-
-            if (parseInt(valueElement.textContent) === minValue) {
-                decrementButton.disabled = true;
-            }
-        }
-
-        setupCounter('adults-value', 'adults-increment', 'adults-decrement', 1, 9);
-        setupCounter('children-value', 'children-increment', 'children-decrement', 0, 4);
-    </script>
+    
+        <script src="script.js"></script>
 </body>
 </html>
