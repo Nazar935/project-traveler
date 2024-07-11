@@ -16,30 +16,56 @@
         <label for="departureCity">Departure City</label>
         <select id="departureCitySelect" onchange="onDepartureCityChange()"></select>
 
-        <label for="numberOfAdults">Adults</label>
-        <select id="numberOfAdultsSelect">
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-    
-        <label for="numberOfChildren">Children</label>
-        <select id="numberOfChildrenSelect">
-            <option selected disabled>Select Number of Children</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
+        <div class="counter-container">
+            <span>Дорослі</span>
+            <button id="adults-decrement">-</button>
+            <span id="adults-value">1</span>
+            <button id="adults-increment">+</button>
+        </div>
+
+        <div class="counter-container">
+            <span>Діти</span>
+            <button id="children-decrement">-</button>
+            <span id="children-value">0</span>
+            <button id="children-increment">+</button>
+        </div>
     </form>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+        function setupCounter(valueId, incrementBtnId, decrementBtnId, minValue, maxValue) {
+            const valueElement = document.getElementById(valueId);
+            const incrementButton = document.getElementById(incrementBtnId);
+            const decrementButton = document.getElementById(decrementBtnId);
+
+            incrementButton.addEventListener('click', () => {
+                let currentValue = parseInt(valueElement.textContent);
+                if (currentValue < maxValue) {
+                    valueElement.textContent = currentValue + 1;
+                    decrementButton.disabled = false;
+                }
+                if (currentValue + 1 === maxValue) {
+                    incrementButton.disabled = true;
+                }
+            });
+
+            decrementButton.addEventListener('click', () => {
+                let currentValue = parseInt(valueElement.textContent);
+                if (currentValue > minValue) {
+                    valueElement.textContent = currentValue - 1;
+                    incrementButton.disabled = false;
+                }
+                if (currentValue - 1 === minValue) {
+                    decrementButton.disabled = true;
+                }
+            });
+
+            if (parseInt(valueElement.textContent) === minValue) {
+                decrementButton.disabled = true;
+            }
+        }
+
+        setupCounter('adults-value', 'adults-increment', 'adults-decrement', 1, 9);
+        setupCounter('children-value', 'children-increment', 'children-decrement', 0, 4);
+    </script>
 </body>
 </html>
