@@ -16,8 +16,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Центрування контейнера по вертикалі */
-    min-height: 100vh; /* Мінімальна висота контейнера на весь екран */
+    justify-content: flex-start; /* Змінили з center на flex-start */
+    min-height: 80vh; /* Зменшили мінімальну висоту контейнера */
 }
 
 h1 {
@@ -80,8 +80,8 @@ p {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 600px; /* Збільшуємо максимальну ширину форми */
-    margin-top: 2rem; /* Додали відступ зверху для візуального розділення */
-    margin-bottom: 2rem; /* Додали відступ знизу для візуального розділення */
+    margin-top: 1rem; /* Додали відступ зверху для візуального розділення */
+    margin-bottom: 1rem; /* Додали відступ знизу для візуального розділення */
     margin: 0 auto; /* Центруємо форму по горизонталі */
 }
 
