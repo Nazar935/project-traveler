@@ -1,35 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Traveler - Головна</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-container, .description-container {
+            background-color: #f7f9fc;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        .form-container {
+            border-left: 6px solid #007bff;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .form-container select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #007bff;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #e0f7fa;
+        }
+        .counter-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .counter-container span {
+            font-size: 18px;
+            color: #007bff;
+            font-weight: 500;
+        }
+        .counter-btn {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .counter-btn:hover {
+            background-color: #0056b3;
+        }
+        .counter-value {
+            margin: 0 15px;
+            font-size: 18px;
+            color: #333;
+        }
+        .counter-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .description-container {
+            text-align: center;
+            border-left: 6px solid #ffcc00;
+        }
+        .description-container h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #007bff;
+        }
+        .description-container p, .description-container ul {
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .description-container ul {
+            list-style-type: disc;
+            margin: 10px 0 20px 20px;
+            padding-left: 20px;
+        }
+        .description-container ul li {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .form-container, .description-container {
+                padding: 20px;
+            }
+            .counter-container span, .counter-value, .counter-btn {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <form>
-        <label for="country">Country</label>
-        <select id="countrySelect" onchange="onCountryChange()"></select>
+    <div class="container">
+        <div class="form-container">
+            <form>
+                <label for="country">Країна</label>
+                <select id="countrySelect" onchange="onCountryChange()"></select>
 
-        <label for="resort">Resort</label>
-        <select id="resortSelect" onchange="onResortChange()"></select>
-        
-        <label for="departureCity">Departure City</label>
-        <select id="departureCitySelect" onchange="onDepartureCityChange()"></select>
-    </form>
+                <label for="resort">Курорт</label>
+                <select id="resortSelect" onchange="onResortChange()"></select>
+                
+                <label for="departureCity">Місто відправлення</label>
+                <select id="departureCitySelect" onchange="onDepartureCityChange()"></select>
+            </form>
 
-        <div class="counter-container">
-            <span>Дорослі</span>
-            <button id="adults-decrement" class="counter-btn">-</button>
-            <span id="adults-value" class="counter-value">1</span>
-            <button id="adults-increment" class="counter-btn">+</button>
+            <div class="counter-container">
+                <span>Дорослі</span>
+                <button id="adults-decrement" class="counter-btn">-</button>
+                <span id="adults-value" class="counter-value">1</span>
+                <button id="adults-increment" class="counter-btn">+</button>
+            </div>
+            <div class="counter-container">
+                <span>Діти</span>
+                <button id="children-decrement" class="counter-btn">-</button>
+                <span id="children-value" class="counter-value">0</span>
+                <button id="children-increment" class="counter-btn">+</button>
+            </div>
         </div>
-        <div class="counter-container">
-            <span>Діти</span>
-            <button id="children-decrement" class="counter-btn">-</button>
-            <span id="children-value" class="counter-value">0</span>
-            <button id="children-increment" class="counter-btn">+</button>
+
+        <div class="description-container">
+            <h2>ОНЛАЙН ТУРАГЕНЦІЯ TRAVELER</h2>
+            <p>
+                Шановні туристи, раді вітати Вас на сайті турагенції Traveler. Ми пропонуємо вам зручний спосіб підібрати путівку та забронювати онлайн.
+            </p>
+            <p>
+                Traveler – це нове ім’я в туристичній галузі, яке створене для організації незабутніх подорожей по всьому світу. Наш інноваційний підхід та любов до своєї справи допомагають нам швидко завоювати довіру клієнтів. Ми спеціалізуємося на онлайн-послугах, що дозволяє нам надавати високоякісні туристичні послуги.
+            </p>
+            <h3>Турагентство - підбір і пошук авіа та автобусних путівок</h3>
+            <ul>
+                <li><strong>Пошук турів</strong> - на нашому сайті Ви можете підібрати і купити пакетні авіа та автобусні тури, а також тільки проживання в готелі.</li>
+                <li><strong>Підбір туру</strong> - зверніться до наших менеджерів для підбору та пошуку туру, який буде відповідати всім Вашим вимогам. Ми підберемо оптимальне рішення для відпочинку під Ваш бюджет.</li>
+            </ul>
         </div>
-    
-        <script src="script.js"></script>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
