@@ -1,4 +1,4 @@
-const apiBaseURL = "https://evident-pug-abnormally.ngrok-free.app";
+const apiBaseURL = "https://traveler-server-falling-voice-5012.fly.dev";
 const apiBaseLocalhostURL = "http://127.0.0.1:8080";
 
 const apiToursURL = `${apiBaseURL}/tours`;
