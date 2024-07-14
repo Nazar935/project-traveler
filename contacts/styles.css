@@ -7,36 +7,35 @@ body {
 
 .container {
     background-color: #ffffff;
-    padding: 2rem;
+    padding: 1rem; /* Зменшено відступи */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 2rem auto;
+    max-width: 600px; /* Зменшено ширину */
+    margin: 1rem auto; /* Зменшено відступи */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Змінили з center на flex-start */
-    min-height: 80vh; /* Зменшили мінімальну висоту контейнера */
+    justify-content: flex-start;
 }
 
 h1 {
-    color: #0044cc; /* Блакитний колір */
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    color: #0044cc;
+    font-size: 2rem; /* Зменшено розмір шрифту */
+    margin-bottom: 0.5rem; /* Зменшено відступи */
 }
 
 h2 {
-    color: #0044cc; /* Блакитний колір */
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    color: #0044cc;
+    font-size: 1.5rem; /* Зменшено розмір шрифту */
+    margin-bottom: 0.5rem; /* Зменшено відступи */
 }
 
 p {
     color: #333333;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    font-size: 1rem; /* Зменшено розмір шрифту */
+    line-height: 1.4; /* Зменшено міжрядковий інтервал */
+    margin-bottom: 1rem; /* Зменшено відступи */
 }
 
 .contact-method {
@@ -44,79 +43,79 @@ p {
     align-items: center;
     justify-content: center;
     background: #f7f9fc;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem; /* Зменшено відступи */
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
-    margin-bottom: 1rem;
+    max-width: 350px; /* Зменшено ширину */
+    margin-bottom: 0.5rem; /* Зменшено відступи */
     transition: background 0.3s ease;
     text-align: center;
 }
 
 .contact-method img {
-    width: 30px;
-    height: 30px;
-    margin-right: 0.75rem;
-    display: inline-block; /* змінено з block на inline-block */
+    width: 25px; /* Зменшено розмір зображення */
+    height: 25px; /* Зменшено розмір зображення */
+    margin-right: 0.5rem; /* Зменшено відступи */
+    display: inline-block;
 }
 
 .contact-method span {
-    font-size: 1.2rem;
-    color: #0044cc; /* Блакитний колір */
-    display: inline-block; /* змінено з block на inline-block */
-    vertical-align: middle; /* додаємо для вертикального вирівнювання */
+    font-size: 1rem; /* Зменшено розмір шрифту */
+    color: #0044cc;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .working-hours {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem; /* Зменшено відступи */
     text-align: center;
 }
 
 .callback-form {
     text-align: left;
     background: #f7f9fc;
-    padding: 1.5rem;
+    padding: 1rem; /* Зменшено відступи */
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Збільшуємо максимальну ширину форми */
-    margin-top: 1rem; /* Додали відступ зверху для візуального розділення */
-    margin-bottom: 1rem; /* Додали відступ знизу для візуального розділення */
-    margin: 0 auto; /* Центруємо форму по горизонталі */
+    max-width: 500px; /* Зменшено ширину */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin: 0 auto;
 }
 
 .callback-form h2 {
     margin-top: 0;
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Зменшено розмір шрифту */
 }
 
 .phone-input {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Зменшено відступи */
 }
 
 .phone-input span {
     background-color: #e0e7ff;
-    padding: 0.75rem;
+    padding: 0.5rem; /* Зменшено відступи */
     border: 1px solid #cccccc;
     border-radius: 5px 0 0 5px;
-    font-size: 1rem;
-    color: #0044cc; /* Блакитний колір */
+    font-size: 0.9rem; /* Зменшено розмір шрифту */
+    color: #0044cc;
 }
 
 .phone-input input {
-    width: calc(100% - 4rem);
-    padding: 0.75rem;
+    width: calc(100% - 3rem); /* Скориговано ширину */
+    padding: 0.5rem; /* Зменшено відступи */
     border: 1px solid #cccccc;
     border-radius: 0 5px 5px 0;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Зменшено розмір шрифту */
 }
 
 .privacy-policy {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Зменшено відступи */
 }
 
 .privacy-policy input {
@@ -125,13 +124,13 @@ p {
 
 .privacy-policy label {
     color: #333333;
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Зменшено розмір шрифту */
 }
 
 button[type="submit"] {
-    background-color: #ffd700; /* Жовтий колір */
-    color: #0044cc; /* Блакитний колір */
-    padding: 0.75rem 1.5rem;
+    background-color: #ffd700;
+    color: #0044cc;
+    padding: 0.5rem 1rem; /* Зменшено відступи */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -148,7 +147,7 @@ button[type="submit"]:hover {
 }
 
 #message {
-    font-size: 1rem;
-    color: #0044cc; /* Блакитний колір */
-    margin-top: 1rem;
+    font-size: 0.9rem; /* Зменшено розмір шрифту */
+    color: #0044cc;
+    margin-top: 0.5rem; /* Зменшено відступи */
 }

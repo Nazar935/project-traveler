@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding-top: 70px; /* Відступ для навігаційної панелі */
+}
+
+.navbar {
+    background-color: #1E90FF; /* Блакитний */
+    color: #fff;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar-item {
+    position: relative;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 0;
+}
+
+.navbar-link::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #FFD700; /* Жовтий */
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.navbar-link:hover {
+    color: #FFD700; /* Жовтий */
+}
+
+.navbar-link:hover::after {
+    width: 100%;
+}
+
+.navbar-login {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-login-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-login-link:hover {
+    color: #FFD700; /* Жовтий */
+}
+
+.avatar-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-container, .description-container {
+    background-color: #f7f9fc;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.form-container {
+    border-left: 6px solid #007bff;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.form-container select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #e0f7fa;
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+}
+
+.counter-group {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.counter-group span {
+    font-size: 18px;
+    color: #007bff;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.counter-btn {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.counter-value {
+    font-size: 18px;
+    color: #007bff;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.search-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+.description-container h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #007bff;
+    display: inline-block;
+}
+
+.description-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.description-container h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.description-container ul {
+    list-style: disc inside;
+}
+
+.description-container ul li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.description-container ul li strong {
+    color: #007bff;
+}

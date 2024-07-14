@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveler - Головна</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="../home/index.html" class="navbar-link">Головна сторінка</a></li>
+                <li class="navbar-item"><a href="../answers-and-questions/index.html" class="navbar-link">Питання та відповіді</a></li>
+                <li class="navbar-item"><a href="../payment/index.html" class="navbar-link">Оплата</a></li>
+                <li class="navbar-item"><a href="../contacts/index.html" class="navbar-link">Контакти</a></li>
+                <li class="navbar-item"><a href="../tour-request/index.html" class="navbar-link">Підберіть мені тур</a></li>
+            </ul>
+            <div class="navbar-login">
+                <a href="../login/index.html" class="navbar-login-link">
+                    <img src="https://www.svgrepo.com/show/5125/avatar.svg" alt="Аватар" class="avatar-icon"> Вхід / Реєстрація
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="country">Країна</label>
+                    <select id="countrySelect" onchange="onCountryChange()"></select>
+                </div>
+                <div class="form-group">
+                    <label for="resort">Курорт</label>
+                    <select id="resortSelect" onchange="onResortChange()"></select>
+                </div>
+                <div class="form-group">
+                    <label for="departureCity">Місто відправлення</label>
+                    <select id="departureCitySelect" onchange="onDepartureCityChange()"></select>
+                </div>
+            </form>
+
+            <div class="counter-container">
+                <div class="counter-group">
+                    <span>Дорослі</span>
+                    <button id="adults-decrement" class="counter-btn">-</button>
+                    <span id="adults-value" class="counter-value">1</span>
+                    <button id="adults-increment" class="counter-btn">+</button>
+                </div>
+                <div class="counter-group">
+                    <span>Діти</span>
+                    <button id="children-decrement" class="counter-btn">-</button>
+                    <span id="children-value" class="counter-value">0</span>
+                    <button id="children-increment" class="counter-btn">+</button>
+                </div>
+            </div>
+
+            <button type="button" id="searchButton" class="search-btn">Пошук</button>
+        </div>
+
+        <div class="description-container">
+            <h2>ОНЛАЙН ТУРАГЕНЦІЯ TRAVELER</h2>
+            <p>
+                Шановні туристи, раді вітати Вас на сайті турагенції Traveler. Ми пропонуємо вам зручний спосіб підібрати путівку та забронювати онлайн.
+            </p>
+            <p>
+                Traveler – це нове ім’я в туристичній галузі, яке створене для організації незабутніх подорожей по всьому світу. Наш інноваційний підхід та любов до своєї справи допомагають нам швидко завоювати довіру клієнтів. Ми спеціалізуємося на онлайн-послугах, що дозволяє нам надавати високоякісні туристичні послуги.
+            </p>
+            <h3>Турагентство - підбір і пошук авіа та автобусних путівок</h3>
+            <ul>
+                <li><strong>Пошук турів</strong> - на нашому сайті Ви можете підібрати і купити пакетні авіа та автобусні тури, а також тільки проживання в готелі.</li>
+                <li><strong>Підбір туру</strong> - зверніться до наших менеджерів для підбору та пошуку туру, який буде відповідати всім Вашим вимогам. Ми підберемо оптимальне рішення для відпочинку під Ваш бюджет.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
