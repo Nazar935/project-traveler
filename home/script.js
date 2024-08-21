@@ -1,5 +1,5 @@
 const apiBaseURL = "https://evident-pug-abnormally.ngrok-free.app";
-const apiBaseLocalhostURL = "http://127.0.0.1:8080";
+const apiBaseLocalhostURL = "https://evident-pug-abnormally.ngrok-free.app";
 
 const apiToursURL = `${apiBaseURL}/tours`;
 const apiToursLocalhostURL = `${apiBaseLocalhostURL}/tours`;
